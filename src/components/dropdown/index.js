@@ -135,6 +135,7 @@ export default class Dropdown extends PureComponent {
     let {
       data = [],
       disabled,
+      noModal,
       onFocus,
       labelHeight,
       itemPadding,
