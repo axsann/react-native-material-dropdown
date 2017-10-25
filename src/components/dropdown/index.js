@@ -23,7 +23,8 @@ const maxMargin = 16;
 export default class Dropdown extends PureComponent {
   static defaultProps = {
     disabled: false,
-
+    noModal: false,
+    
     rippleOpacity: 0.54,
     shadeOpacity: 0.12,
 
@@ -42,6 +43,7 @@ export default class Dropdown extends PureComponent {
 
   static propTypes = {
     disabled: PropTypes.bool,
+    noModal: PropTypes.bool,
 
     rippleInsets: PropTypes.shape({
       top: PropTypes.number,
@@ -163,6 +165,10 @@ export default class Dropdown extends PureComponent {
 
     if ('function' === typeof onFocus) {
       onFocus();
+    }
+
+    if (noModal) {
+      return;
     }
 
     let dimensions = Dimensions.get('window');
