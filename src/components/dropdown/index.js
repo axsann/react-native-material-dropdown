@@ -376,6 +376,7 @@ export default class Dropdown extends PureComponent {
       <TextField
         {...props}
 
+        active
         value={title}
         editable={false}
         onChangeText={undefined}
